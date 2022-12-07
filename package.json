@@ -1,0 +1,17 @@
+{
+  "name": "111-1-deploy-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "install:all": "cd frontend && yarn install && cd ../backend && yarn install",
+    "start": "cd frontend && yarn start",
+    "server": "cd backend && yarn server",
+    "install:prod": "cd frontend && yarn install --freeze-lockfile && cd ../backend && yarn install --freeze-lockfile",
+    "build": "cd frontend && yarn build",
+    "deploy": "cd backend && yarn deploy"
+  },
+  "repository": "git@github.com:ntuee-web-programming/111-1-deploy-demo.git",
+  "author": "madmaxieee <76544194+madmaxieee@users.noreply.github.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "packageManager": "yarn@1.22.19"
+}
