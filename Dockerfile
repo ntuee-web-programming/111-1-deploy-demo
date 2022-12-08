@@ -1,10 +1,6 @@
 FROM node:16-alpine
 
-ARG PORT=4000
-
-ENV PORT=$PORT
-
-EXPOSE ${PORT}
+EXPOSE 4000
 
 COPY . /app
 WORKDIR /app
