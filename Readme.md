@@ -114,18 +114,20 @@ RUN yarn build
 
 CMD ["yarn", "deploy"]
 ```
-## setup a project on Railway.app
-[https://railway.app/](https://railway.app/)
+### setup a project on [Railway.app](https://railway.app/)
 1. create an account
 2. start a new project
-		![[CleanShot 2022-12-14 at 02.24.53@2x.png]]
+    ![](https://i.imgur.com/0Mettdj.jpg)
+
 3. select deploy from Github repo
-	![[CleanShot 2022-12-14 at 02.25.27@2x.png]]
+    ![](https://i.imgur.com/NvuXKLq.jpg)
+
 4. select your repo
-	![[CleanShot 2022-12-14 at 02.27.37@2x.png]]
-	railway should be building your docker image
+    ![](https://i.imgur.com/cgm3YhG.png)
+    railway should be building your docker image
 
 5. generate a domain for your project
-	![[CleanShot 2022-12-14 at 02.30.52@2x.png]]
+    ![](https://i.imgur.com/dAc3asR.png)
+
 6. connect to your app with the generated domain
-	![[CleanShot 2022-12-14 at 02.31.58@2x.png]]
+    ![](https://i.imgur.com/6rvX0mW.jpg)
