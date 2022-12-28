@@ -5,7 +5,7 @@
     "install:all": "cd frontend && yarn install && cd ../backend && yarn install",
     "start": "cd frontend && yarn start",
     "server": "cd backend && yarn server",
-    "install:prod": "cd frontend && yarn install --freeze-lockfile && cd ../backend && yarn install --freeze-lockfile",
+    "install:prod": "cd frontend && yarn install --frozen-lockfile && cd ../backend && yarn install --frozen-lockfile",
     "build": "cd frontend && yarn build",
     "deploy": "cd backend && yarn deploy"
   },
