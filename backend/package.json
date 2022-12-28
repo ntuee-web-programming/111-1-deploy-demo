@@ -1,7 +1,8 @@
 {
   "name": "backend",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "ws": "^8.11.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",

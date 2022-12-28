@@ -3,6 +3,7 @@ import Stack from "@mui/material/Stack";
 import logo from './logo.svg';
 import ClientCounter from "./components/ClientCounter";
 import ServerMessage from "./components/ServerMessage";
+import WebsocketNumber from "./components/WebsocketNumber";
 
 function App() {
   return (
@@ -12,13 +13,10 @@ function App() {
       direction="column"
       alignItems="center"
     >
-      <img
-        src={logo}
-        alt="logo"
-        style={{ width: "100px", height: "100px" }}
-      /> 
+      <img src={logo} alt="logo" style={{ width: "100px", height: "100px" }} />
       <ClientCounter />
       <ServerMessage />
+      <WebsocketNumber />
     </Stack>
   );
 }
