@@ -7,7 +7,7 @@ const API_ROOT =
 
 const WS_URL =
   process.env.NODE_ENV === "production"
-    ? window.location.origin.replace(/^https*/, "ws")
+    ? window.location.origin.replace(/^http/, "ws")
     : "ws://localhost:4000";
 
 export const api = axios.create({ baseURL: API_ROOT });
