@@ -134,7 +134,7 @@ file structure:
 
 #### in the root directory
 
-1. add a script at the project's root that install packages in frontend and backend with the option `--freeze-lockfile`
+1. add a script at the project's root that install packages in frontend and backend with the option `--frozen-lockfile`
 2. add a script that runs the `build` command in `./frontend`
 3. add a script that runs the `deploy` command in `./backend`
 
@@ -143,7 +143,7 @@ file structure:
   ...
   "scripts": {
     ...
-    "install:prod": "cd frontend && yarn install --freeze-lockfile && cd ../backend && yarn install --freeze-lockfile",
+    "install:prod": "cd frontend && yarn install --frozen-lockfile && cd ../backend && yarn install --frozen-lockfile",
     "build": "cd frontend && yarn build",
     "deploy": "cd backend && yarn deploy"
   },
@@ -188,9 +188,7 @@ Yes, I am talking about Windows. Be careful about the spaces around `&&`, Window
 import axios from "axios";
 
 const API_ROOT =
-  process.env.NODE_ENV === "production"
-    ? "/api"
-    : "http://localhost:4000/api";
+  process.env.NODE_ENV === "production" ? "/api" : "http://localhost:4000/api";
 
 const WS_URL =
   process.env.NODE_ENV === "production"
@@ -199,7 +197,6 @@ const WS_URL =
 
 export const api = axios.create({ baseURL: API_ROOT });
 export const ws = new WebSocket(WS_URL);
-
 ```
 
 ### serve the output folder with backend
@@ -235,7 +232,7 @@ const port = process.env.PORT || 4000;
 
 ```javascript
 if (process.env.NODE_ENV === "development") {
- app.use(cors());
+  app.use(cors());
 }
 ```
 
@@ -261,59 +258,59 @@ CMD ["yarn", "deploy"]
 1. create an account
 
 2. start a new project
- ![](hstart a new projectttps://i.imgur.com/vflqUuF.jpg)
+   ![](hstart a new projectttps://i.imgur.com/vflqUuF.jpg)
 
 3. select deploy from Github repo
-    ![select deploy from Github repo](https://i.imgur.com/cgm3YhG.png)
+   ![select deploy from Github repo](https://i.imgur.com/cgm3YhG.png)
 
 4. select your repo, railway should be building your docker image
 
 5. generate a domain for your project
-    ![generate a domain for your project](https://i.imgur.com/dAc3asR.png)
+   ![generate a domain for your project](https://i.imgur.com/dAc3asR.png)
 
 6. connect to your app with the generated domain
-    ![connect to your app with the generated domain](https://i.imgur.com/6rvX0mW.jpg)
+   ![connect to your app with the generated domain](https://i.imgur.com/6rvX0mW.jpg)
 
 ## setup railway project with railway cli
 
 1. create an account
 
 2. start a new project
- ![](hstart a new projectttps://i.imgur.com/vflqUuF.jpg)
+   ![](hstart a new projectttps://i.imgur.com/vflqUuF.jpg)
 
 3. select deploy empty project
-    ![select deploy empty project](https://i.imgur.com/Sm2bR5K.png)
+   ![select deploy empty project](https://i.imgur.com/Sm2bR5K.png)
 
 4. click "set up your project locally"
-    ![click "set up your project locally"](https://i.imgur.com/Qx3jF0q.png)
+   ![click "set up your project locally"](https://i.imgur.com/Qx3jF0q.png)
 
 5. install railway cli by copying and pasting the first command
-    ![install railway cli by copying and pasting the first command](https://i.imgur.com/4EJfPD7.png)
+   ![install railway cli by copying and pasting the first command](https://i.imgur.com/4EJfPD7.png)
 
 6. go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:
 
-    ```bash
-    railway login
-    ```
+   ```bash
+   railway login
+   ```
 
-    ![go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:](https://i.imgur.com/jBPKmDa.png)
+   ![go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:](https://i.imgur.com/jBPKmDa.png)
 
 7. go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:
 
-    ```bash
-    railway link <your-project-hash>
-    ```
+   ```bash
+   railway link <your-project-hash>
+   ```
 
-    ![go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:](https://i.imgur.com/78G6J1e.png)
-    ![go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:](https://i.imgur.com/9tQfpt7.png)
+   ![go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:](https://i.imgur.com/78G6J1e.png)
+   ![go to your project folder (i.e. `wp1111/hw6`) and run the following command to login to your account:](https://i.imgur.com/9tQfpt7.png)
 
 8. go to your project folder and run the following command to start deploying
 
-    ```bash
-    railway up
-    ```
+   ```bash
+   railway up
+   ```
 
-    ![go to your project folder and run the following command to start deploying](https://i.imgur.com/rc1KaJR.png)
+   ![go to your project folder and run the following command to start deploying](https://i.imgur.com/rc1KaJR.png)
 
 9. go to your project page on [Railway.app](https://railway.app/) (or by clicking the link in the terminal), it should be building your docker image
 
@@ -326,35 +323,35 @@ CMD ["yarn", "deploy"]
 ## Environment variables on Railway
 
 It is a bad practice to put your `.env` file anywhere online. You should instead add environment variables via the "variables" tab on Railway.
-    ![It is a bad practice to put your `.env` file anywhere online. You should instead add environment variables via the "variables" tab on Railway.](https://i.imgur.com/sXi0W0o.png)
+![It is a bad practice to put your `.env` file anywhere online. You should instead add environment variables via the "variables" tab on Railway.](https://i.imgur.com/sXi0W0o.png)
 
 ## deploy a web service with [Render](https://render.com/)
 
 1. create an account
-    ![create an account](https://i.imgur.com/ItvQM5k.jpg)
+   ![create an account](https://i.imgur.com/ItvQM5k.jpg)
 
 2. go to your [dashboard](https://dashboard.render.com/), and select "New Web Service"
-    ![go to your dashboard, and select "New Web Service"](https://i.imgur.com/tvCSrDH.png)
+   ![go to your dashboard, and select "New Web Service"](https://i.imgur.com/tvCSrDH.png)
 
 3. connect to your Github account
-    ![connect to your Github account](https://i.imgur.com/cGtNkP0.png)
+   ![connect to your Github account](https://i.imgur.com/cGtNkP0.png)
 
 4. find the repo you want to deploy, click "connect"
-    ![find the repo you want to deploy, click "connect"](https://i.imgur.com/OvQAStd.png)
+   ![find the repo you want to deploy, click "connect"](https://i.imgur.com/OvQAStd.png)
 
 5. input a unique name for your webservice, and use the setting shown below. If you follow the steps above, this setting should work just fine.
-    ![input a unique name for your webservice, and use the setting shown below. If you follow the steps above, this setting should work just fine.](https://i.imgur.com/DAizlju.jpg)
+   ![input a unique name for your webservice, and use the setting shown below. If you follow the steps above, this setting should work just fine.](https://i.imgur.com/DAizlju.jpg)
 
 6. scroll to the bottom, click "Create Web Service"
-    ![scroll to the bottom, click "Create Web Service"](https://i.imgur.com/goRaahv.png)
+   ![scroll to the bottom, click "Create Web Service"](https://i.imgur.com/goRaahv.png)
 
 7. wait for the platform to build your docker image and deploy your service, this would take about 10 minutes
-    ![wait for the platform to build your docker image and deploy your service, this would take about 10 minutes](https://i.imgur.com/OvTDbnh.jpg)
+   ![wait for the platform to build your docker image and deploy your service, this would take about 10 minutes](https://i.imgur.com/OvTDbnh.jpg)
 
 8. when it finishes deploying your service, visit this link. Voila! Your service is live!
-    ![when it finishes deploying your service, visit this link. Voila! Your service is live!](https://i.imgur.com/6BZp0PS.png)
+   ![when it finishes deploying your service, visit this link. Voila! Your service is live!](https://i.imgur.com/6BZp0PS.png)
 
 ## Environment variables on Render
 
 Similar to Render, you can configure your environment variables in the "Environment" tab.
-    ![you can configure your environment variables in the "Environment" tab.](https://i.imgur.com/H9AeDkz.jpg)
+![you can configure your environment variables in the "Environment" tab.](https://i.imgur.com/H9AeDkz.jpg)
